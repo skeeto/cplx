@@ -86,7 +86,7 @@ being optimized. For example, while this would be great, this would
 
 ```el
 ;; before;
-(cplx-* (cplx-const 2.0) c)
+(cplx-* (cplx-const 2.0 0.0) c)
 
 ;; after:
 (cons (* 2.0 (car c)) (* 2.0 (cdr c)))
