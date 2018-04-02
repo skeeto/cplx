@@ -119,7 +119,7 @@ also be reasonable."
   "Return the natural logarithm of the complex number C."
   (let ((re (cplx-real c))
         (im (cplx-imag c)))
-    (cplx (log (abs (sqrt (+ (* re re) (* im im)))))
+    (cplx (log (sqrt (+ (* re re) (* im im))))
           (atan im re))))
 
 (defsubst cplx-asin (c)
