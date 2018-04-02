@@ -27,14 +27,14 @@ Constructor, predicate, and accessors:
 * `(cplx-real c)`
 * `(cplx-imag c)`
 
-Basic operators:
+Operators:
 
 * `(cplx-+ a b)`
 * `(cplx-- a b)`
 * `(cplx-* a b)`
 * `(cplx-/ a b)`
 
-Unary functions:
+Functions:
 
 * `(cplx-abs c)`
 * `(cplx-arg c)`
