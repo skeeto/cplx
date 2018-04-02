@@ -140,6 +140,13 @@ also be reasonable."
     (cplx-/ (cplx-* i (cplx-log (cplx-/ (cplx-+ i c) (cplx-- i c))))
             (cplx-const 2.0 0.0))))
 
+(defsubst cplx-exp (c)
+  "Return the exponential base of the complex number C."
+  (let ((im (cplx-imag c))
+        (f  (exp (cplx-real c))))
+    (cplx (* f (cos im))
+          (* f (sin im)))))
+
 (provide 'cplx)
 
 ;;; cplx.el ends here

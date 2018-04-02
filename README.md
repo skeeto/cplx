@@ -48,10 +48,10 @@ Unary functions:
 * `(cplx-asin c)`
 * `(cplx-acos c)`
 * `(cplx-atan c)`
+* `(cplx-exp c)`
 
 Unimplemented (wish list):
 
-* `(cplx-exp c)`
 * `(cplx-expt a b)`
 
 ## Philosophy

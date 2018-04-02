@@ -89,4 +89,9 @@
     (should (cplx-eql (cplx-atan c)
                       (cplx 1.40992104959658 0.229072682968539)))))
 
+(ert-deftest cplx-exp ()
+  (let ((c (cplx 2.0 3.0)))
+    (should (cplx-eql (cplx-exp c)
+                      (cplx -7.3151100949011 1.0427436562359)))))
+
 ;;; cplx-tests.el ends here
