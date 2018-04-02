@@ -33,7 +33,7 @@ also be reasonable."
   "Return the imaginary component of complex number C."
   (cdr c))
 
-;; Binary functions
+;; Operators
 
 (defsubst cplx-+ (a b)
   "Return the sum of complex numbers A and B."
@@ -64,7 +64,7 @@ also be reasonable."
     (cplx (/ (- (* ar br) (* ai bi)) d)
           (/ (+ (* ar bi) (* ai br)) d))))
 
-;; Unary functions
+;; Functions
 
 (defsubst cplx-abs (c)
   "Return the magnitude of the complex number C."
@@ -146,6 +146,17 @@ also be reasonable."
         (f  (exp (cplx-real c))))
     (cplx (* f (cos im))
           (* f (sin im)))))
+
+(defsubst cplx-expt (a b)
+  "Return the exponential A^B for complex numbers A and B."
+  (let* ((r  (cplx-abs a))
+         (p  (cplx-arg a))
+         (re (cplx-real b))
+         (im (cplx-imag b))
+         (th (+ (* im (log r)) (* re p)))
+         (f (* (expt r re) (exp (* p (- im))))))
+    (cplx (* f (cos th))
+          (* f (sin th)))))
 
 (provide 'cplx)
 

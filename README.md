@@ -49,9 +49,6 @@ Unary functions:
 * `(cplx-acos c)`
 * `(cplx-atan c)`
 * `(cplx-exp c)`
-
-Unimplemented (wish list):
-
 * `(cplx-expt a b)`
 
 ## Philosophy
