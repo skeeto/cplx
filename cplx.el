@@ -8,6 +8,8 @@
 
 ;;; Code:
 
+(require 'gv)
+
 (defsubst cplx (real imag)
   "Create a new complex number with the given REAL and IMAG parts."
   (cons real imag))
@@ -32,6 +34,10 @@ also be reasonable."
 (defsubst cplx-imag (c)
   "Return the imaginary component of complex number C."
   (cdr c))
+
+(gv-define-simple-setter cplx-real setcar)
+
+(gv-define-simple-setter cplx-imag setcdr)
 
 ;; Operators
 

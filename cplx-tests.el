@@ -27,7 +27,10 @@
          (c (cplx re im)))
     (should (eq  (cplx-p c) t))
     (should (eql (cplx-real c) re))
-    (should (eql (cplx-imag c) im))))
+    (should (eql (cplx-imag c) im))
+    (setf (cplx-real c) im
+          (cplx-imag c) re)
+    (should (cplx-eql c (cplx im re)))))
 
 ;; The constants below all come from GNU Octave:
 
