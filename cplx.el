@@ -140,6 +140,11 @@ also be reasonable."
     (cplx-/ (cplx-* i (cplx-log (cplx-/ (cplx-+ i c) (cplx-- i c))))
             (cplx-const 2.0 0.0))))
 
+(defsubst cplx-zerop (c)
+  "Return non-nil if the complex number C is zero."
+  (and (eql (cplx-real c) 0.0)
+       (eql (cplx-imag c) 0.0)))
+
 (defsubst cplx-exp (c)
   "Return the exponential base of the complex number C."
   (let ((im (cplx-imag c))
@@ -149,14 +154,16 @@ also be reasonable."
 
 (defsubst cplx-expt (a b)
   "Return the exponential A^B for complex numbers A and B."
-  (let* ((r  (cplx-abs a))
-         (p  (cplx-arg a))
-         (re (cplx-real b))
-         (im (cplx-imag b))
-         (th (+ (* im (log r)) (* re p)))
-         (f (* (expt r re) (exp (* p (- im))))))
-    (cplx (* f (cos th))
-          (* f (sin th)))))
+  (if (cplx-zerop a)
+      (cplx 0.0 0.0)
+    (let* ((r  (cplx-abs a))
+           (p  (cplx-arg a))
+           (re (cplx-real b))
+           (im (cplx-imag b))
+           (th (+ (* im (log r)) (* re p)))
+           (f (* (expt r re) (exp (* p (- im))))))
+      (cplx (* f (cos th))
+            (* f (sin th))))))
 
 (provide 'cplx)
 

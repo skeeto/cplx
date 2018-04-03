@@ -48,6 +48,7 @@ Functions:
 * `(cplx-asin c)`
 * `(cplx-acos c)`
 * `(cplx-atan c)`
+* `(cplx-zerop c)`
 * `(cplx-exp c)`
 * `(cplx-expt a b)`
 
